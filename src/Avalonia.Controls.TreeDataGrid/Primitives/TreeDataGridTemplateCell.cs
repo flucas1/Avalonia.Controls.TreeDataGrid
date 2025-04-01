@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Selection;
 using Avalonia.Controls.Templates;
+using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
@@ -33,12 +36,25 @@ namespace Avalonia.Controls.Primitives
         private IDataTemplate? _editingTemplate;
         private ContentPresenter? _editingContentPresenter;
 
+        private bool SetAndRaiseFast<T>(DirectPropertyBase<T> property, ref T field, T value)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value))
+            {
+                return false;
+            }
+
+            var old = field;
+            field = value;
+            RaisePropertyChanged(property, old, value);
+            return true;
+        }
+
         public object? Content
         {
             get => _content;
             private set
             {
-                if (SetAndRaise(ContentProperty, ref _content, value))
+                if (SetAndRaiseFast(ContentProperty, ref _content, value))
                     RaiseCellValueChanged();
             }
         }
@@ -46,13 +62,13 @@ namespace Avalonia.Controls.Primitives
         public IDataTemplate? ContentTemplate 
         { 
             get => _contentTemplate;
-            set => SetAndRaise(ContentTemplateProperty, ref _contentTemplate, value);
+            set => SetAndRaiseFast(ContentTemplateProperty, ref _contentTemplate, value);
         }
 
         public IDataTemplate? EditingTemplate
         {
             get => _editingTemplate;
-            set => SetAndRaise(EditingTemplateProperty, ref _editingTemplate, value);
+            set => SetAndRaiseFast(EditingTemplateProperty, ref _editingTemplate, value);
         }
 
         public override void Realize(
