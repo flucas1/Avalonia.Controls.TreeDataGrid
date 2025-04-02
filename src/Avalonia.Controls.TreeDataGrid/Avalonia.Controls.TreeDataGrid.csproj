@@ -7,6 +7,9 @@
   <PropertyGroup>
     <PackageId>Avalonia.Controls.TreeDataGrid</PackageId>
   </PropertyGroup>
+  <PropertyGroup Label="Avalonia">
+    <AvaloniaUseCompiledBindingsByDefault>True</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.6" />
     
