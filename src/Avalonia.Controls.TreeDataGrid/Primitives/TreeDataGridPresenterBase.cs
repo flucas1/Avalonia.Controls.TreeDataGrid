@@ -287,6 +287,7 @@ namespace Avalonia.Controls.Primitives
             return EstimateElementSizeU() * Items.Count;
         }
 
+        private bool twoPassMeasure = false;
         protected override Size MeasureOverride(Size availableSize)
         {
             var items = Items;
@@ -325,7 +326,7 @@ namespace Avalonia.Controls.Primitives
                 RealizeElements(items, availableSize, ref viewport);
 
                 // Run the final measure pass if necessary.
-                if (NeedsFinalMeasurePass(_measureElements.FirstIndex, _measureElements.Elements))
+                if (twoPassMeasure && NeedsFinalMeasurePass(_measureElements.FirstIndex, _measureElements.Elements))
                 {
                     var count = _measureElements.Count;
 
