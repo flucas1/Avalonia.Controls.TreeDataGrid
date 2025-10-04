@@ -469,10 +469,14 @@ namespace Avalonia.Controls
 
             if (allowedEffects != DragDropEffects.None)
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 var data = new DataObject();
+#pragma warning restore CS0618 // Type or member is obsolete
                 var info = new DragInfo(_source, RowSelection.SelectedIndexes.ToList());
                 data.Set(DragInfo.DataFormat, info);
+#pragma warning disable CS0618 // Type or member is obsolete
                 DragDrop.DoDragDrop(trigger, data, allowedEffects);
+#pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 
@@ -612,6 +616,7 @@ namespace Avalonia.Controls
             [NotNullWhen(true)] out DragInfo? data,
             out TreeDataGridRowDropPosition position)
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             if (!AutoDragDropRows ||
                 e.Data.Get(DragInfo.DataFormat) is not DragInfo di ||
                 _source is null ||
@@ -623,6 +628,7 @@ namespace Avalonia.Controls
                 position = TreeDataGridRowDropPosition.None;
                 return false;
             }
+#pragma warning restore CS0618 // Type or member is obsolete
 
             var targetIndex = _source.Rows.RowIndexToModelIndex(targetRow.RowIndex);
             position = GetDropPosition(_source, e, targetRow);
