@@ -11,7 +11,7 @@
     <AvaloniaUseCompiledBindingsByDefault>True</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.7" />
+    <PackageReference Include="Avalonia" Version="11.3.8" />
     
     <PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
