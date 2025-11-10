@@ -7,8 +7,8 @@ namespace Avalonia.Controls.Models
     public abstract class ReadOnlyListBase<T> : IReadOnlyList<T>, IList
     {
         public abstract T this[int index] { get; }
-        
-        object? IList.this[int index] 
+
+        object? IList.this[int index]
         {
             get => this[index];
             set => throw new NotSupportedException();

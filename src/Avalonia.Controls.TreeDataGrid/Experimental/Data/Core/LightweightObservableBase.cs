@@ -19,7 +19,7 @@ namespace Avalonia.Experimental.Data.Core
         private List<IObserver<T>>? _observers = new List<IObserver<T>>();
 
         public bool HasObservers => _observers?.Count > 0;
-        
+
         public IDisposable Subscribe(IObserver<T> observer)
         {
             _ = observer ?? throw new ArgumentNullException(nameof(observer));

@@ -34,7 +34,7 @@ namespace Avalonia.Controls.Models
                     Insert(i, item);
                     ++i;
                 }
-                
+
                 action(DoInsert);
             }
             finally
@@ -130,7 +130,7 @@ namespace Avalonia.Controls.Models
         protected override void RemoveItem(int index)
         {
             CheckReentrancy();
-            
+
             var removedItem = this[index];
 
             base.RemoveItem(index);
@@ -153,7 +153,7 @@ namespace Avalonia.Controls.Models
         protected override void InsertItem(int index, T item)
         {
             CheckReentrancy();
-            
+
             base.InsertItem(index, item);
 
             if (_batchUpdate == BatchUpdateType.None)
@@ -174,7 +174,7 @@ namespace Avalonia.Controls.Models
         protected override void SetItem(int index, T item)
         {
             CheckReentrancy();
-            
+
             var originalItem = this[index];
             base.SetItem(index, item);
 
@@ -195,7 +195,7 @@ namespace Avalonia.Controls.Models
         protected virtual void MoveItem(int oldIndex, int newIndex)
         {
             CheckReentrancy();
-            
+
             var removedItem = this[oldIndex];
 
             base.RemoveItem(oldIndex);

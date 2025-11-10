@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Xml.Linq;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Selection;
 using Avalonia.Layout;
 using Avalonia.LogicalTree;
-using Avalonia.Media;
 using Avalonia.VisualTree;
 
 namespace Avalonia.Controls.Primitives
@@ -122,7 +120,7 @@ namespace Avalonia.Controls.Primitives
             if (change.Property == BackgroundProperty)
                 InvalidateVisual();
         }
-        
+
         internal void UpdateSelection(ITreeDataGridSelectionInteraction? selection)
         {
             foreach (var element in RealizedElements)

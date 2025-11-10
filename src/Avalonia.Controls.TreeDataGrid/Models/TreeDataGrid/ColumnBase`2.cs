@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using Avalonia.Experimental.Data;
 using Avalonia.Experimental.Data.Core;
-using Avalonia.Reactive;
 
 namespace Avalonia.Controls.Models.TreeDataGrid
 {
@@ -44,7 +43,7 @@ namespace Avalonia.Controls.Models.TreeDataGrid
             : base(header, width, options)
         {
             ValueSelector = getter.Compile();
-            Binding = setter is null ? 
+            Binding = setter is null ?
                 TypedBinding<TModel>.OneWay(getter) :
                 TypedBinding<TModel>.TwoWay(getter, setter);
             _canUserSort = options?.CanUserSortColumn ?? true;
@@ -96,7 +95,7 @@ namespace Avalonia.Controls.Models.TreeDataGrid
         {
             if (!_canUserSort)
                 return null;
-            
+
             return direction switch
             {
                 ListSortDirection.Ascending => _sortAscending,

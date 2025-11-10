@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Globalization;
-using System.Reflection;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Selection;
 using Avalonia.Media;
@@ -25,11 +23,11 @@ namespace Avalonia.Controls.Primitives
                 o => o.Value,
                 (o, v) => o.Value = v);
 
-        public static readonly DirectProperty<TreeDataGridTextCell,TextAlignment> TextAlignmentProperty =
-            AvaloniaProperty.RegisterDirect < TreeDataGridTextCell, TextAlignment>(
+        public static readonly DirectProperty<TreeDataGridTextCell, TextAlignment> TextAlignmentProperty =
+            AvaloniaProperty.RegisterDirect<TreeDataGridTextCell, TextAlignment>(
                 nameof(TextAlignment),
                 o => o.TextAlignment,
-                (o,v)=> o.TextAlignment = v);
+                (o, v) => o.TextAlignment = v);
 
         private string? _value;
         private TextBox? _edit;

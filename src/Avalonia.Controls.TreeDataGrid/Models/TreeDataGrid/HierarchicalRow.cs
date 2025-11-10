@@ -62,7 +62,7 @@ namespace Avalonia.Controls.Models.TreeDataGrid
         public int Indent => ModelIndexPath.Count - 1;
         public TModel Model { get; }
 
-        public GridLength Height 
+        public GridLength Height
         {
             get => GridLength.Auto;
             set { }

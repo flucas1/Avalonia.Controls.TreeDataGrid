@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-using Avalonia.Media;
+﻿using Avalonia.Media;
 
 namespace Avalonia.Controls.Models.TreeDataGrid
 {

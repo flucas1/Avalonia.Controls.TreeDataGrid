@@ -7,7 +7,7 @@ namespace Avalonia.Controls.Primitives
 {
     public class TreeDataGridElementFactory
     {
-        private readonly Dictionary<object, List<Control>>  _recyclePool = new();
+        private readonly Dictionary<object, List<Control>> _recyclePool = new();
 
         public Control GetOrCreateElement(object? data, Control parent)
         {
@@ -17,7 +17,7 @@ namespace Avalonia.Controls.Primitives
             {
                 // First look for an element with the same parent.
                 for (var i = 0; i < elements.Count; i++)
-                { 
+                {
                     var e = elements[i];
 
                     if (e.Parent == parent)

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 
@@ -306,7 +305,7 @@ namespace Avalonia.Controls.Selection
                 if (!treeDataGrid.QueryCancelSelection())
                     SelectFromAnchorTo(columnIndex, rowIndex);
             }
-            else if (_selectedColumns.SelectedIndex != columnIndex || 
+            else if (_selectedColumns.SelectedIndex != columnIndex ||
                 _selectedRows.SelectedIndex != modelIndex ||
                 Count > 1)
             {

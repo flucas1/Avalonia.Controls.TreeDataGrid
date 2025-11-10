@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using Avalonia.Controls.Models.TreeDataGrid;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Selection;
 using Avalonia.Controls.Templates;
-using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
@@ -59,8 +57,8 @@ namespace Avalonia.Controls.Primitives
             }
         }
 
-        public IDataTemplate? ContentTemplate 
-        { 
+        public IDataTemplate? ContentTemplate
+        {
             get => _contentTemplate;
             set => SetAndRaiseFast(ContentTemplateProperty, ref _contentTemplate, value);
         }
@@ -73,7 +71,7 @@ namespace Avalonia.Controls.Primitives
 
         public override void Realize(
             TreeDataGridElementFactory factory,
-            ITreeDataGridSelectionInteraction? selection, 
+            ITreeDataGridSelectionInteraction? selection,
             ICell model,
             int columnIndex,
             int rowIndex)

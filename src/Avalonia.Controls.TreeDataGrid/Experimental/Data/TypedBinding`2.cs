@@ -2,8 +2,6 @@
 using System.Reactive.Disposables;
 using Avalonia.Data;
 using Avalonia.Experimental.Data.Core;
-using Avalonia.Reactive;
-using Avalonia.VisualTree;
 
 #nullable enable
 
@@ -163,7 +161,7 @@ namespace Avalonia.Experimental.Data
 
             if ((mode == BindingMode.TwoWay || mode == BindingMode.OneWayToSource) && Write is null)
                 throw new InvalidOperationException($"Cannot bind TypedBinding {Mode}: Write is uninitialized.");
-            
+
             return new TypedBindingExpression<TIn, TOut>(source, Read, Write, Links, fallback);
         }
 

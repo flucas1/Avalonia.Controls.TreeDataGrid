@@ -1,6 +1,4 @@
-﻿using Avalonia.Media;
-
-namespace Avalonia.Controls.Models.TreeDataGrid
+﻿namespace Avalonia.Controls.Models.TreeDataGrid
 {
     public interface ICellOptions
     {

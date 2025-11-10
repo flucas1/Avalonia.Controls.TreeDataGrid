@@ -9,7 +9,7 @@ namespace Avalonia.Experimental.Data
         {
             return new SingleValueImpl<T>(value);
         }
- 
+
         private sealed class SingleValueImpl<T> : IObservable<T>
         {
             private readonly T _value;
