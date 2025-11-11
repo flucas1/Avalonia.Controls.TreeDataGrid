@@ -760,7 +760,7 @@ namespace Avalonia.Controls
             }
         }
 
-        private void OnSourceSorted()
+        public void OnSourceSorted()
         {
             RowsPresenter?.RecycleAllElements();
             RowsPresenter?.InvalidateMeasure();
