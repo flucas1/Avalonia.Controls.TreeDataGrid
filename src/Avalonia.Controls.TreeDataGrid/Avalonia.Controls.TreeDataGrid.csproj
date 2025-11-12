@@ -14,4 +14,7 @@
     <PackageReference Include="Avalonia" Version="11.3.8" />
     <PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
 </Project>
